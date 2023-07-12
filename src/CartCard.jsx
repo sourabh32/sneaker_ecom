@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 
 const CartCard = ({product} ) => {
   const {id,image,price,quantity} = product
+
 const dispatch = useDispatch()
   return (
     <div className="product-card">
@@ -14,7 +15,7 @@ const dispatch = useDispatch()
       <div className="quantity-controls">
         <button onClick={()=>dispatch(decreItemFromCart(id))}>-</button>
         <span>{quantity}</span>
-        {/* <button onClick={()=>dispatch(addItemToCart(id))}>+</button> */}
+        <button onClick={()=>dispatch(addItemToCart({...product}))}>+</button>
       </div>
       <button onClick={()=>dispatch(removeItemFromCart(id))}>X</button>
     </div>
