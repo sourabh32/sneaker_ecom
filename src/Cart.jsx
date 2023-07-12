@@ -6,7 +6,7 @@ const Cart = () => {
       
     const items = useSelector(state=> state.cartReducer.cartItems)
     console.log(items)
-    let cartTotal= items.reduce((a,b)=>a.quantity*a.price+b.quantity*b.price)
+    let cartTotal= items.reduce((a,b)=>a+b.quantity*b.price,0)
     let cartQuantity= items.length
      
   
