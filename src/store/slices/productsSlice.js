@@ -1,5 +1,5 @@
 import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
-import { fetchSneakerData } from "../../firebase";
+import { fetchSneakerData } from "../../firebaseFunctions";
 
 
 export const fetchProducts = createAsyncThunk("products/fetch", async ()=>{
