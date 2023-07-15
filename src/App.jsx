@@ -5,8 +5,13 @@ import SneakerGallery from "./SneakerGallery"
 import Cart from "./Cart"
 import { useEffect } from "react"
 import { fetchProducts } from "./store/slices/productsSlice"
-import { inital } from "./store/slices/displaySlice"
+
 import Header from "./Header"
+import { auth } from "./firebaseConfig"
+import SignIn from "./SignIn"
+import SignUp from "./SignUp"
+import { onAuthStateChanged } from "firebase/auth"
+import { setUser } from "./store/slices/userSlice"
 
 
 
@@ -14,22 +19,24 @@ import Header from "./Header"
 
 function App() {
   const products = useSelector(state => state.productReducer.products)
-  
   const dispatch = useDispatch()
   useEffect(() => {
-    const fetchData =  () => {
-       dispatch(fetchProducts());
-    
-    };
-    fetchData()
-  }, []);
+    const unsubscribe = onAuthStateChanged(auth, currentUser => {
+      console.log(currentUser)
+      if (currentUser) {
+        dispatch(setUser({photoURL:currentUser.photoURL,email:currentUser.email}));
+      } else {
+        dispatch(setUser({
+          email:null,
+          photoURL:null
+      }));
+      }
+    });
   
-  useEffect(()=>{
-    if(products.length>0){
-      dispatch(inital(products))
-    }
-  },[products])
-
+    return () => {
+      unsubscribe();
+    };
+  }, []);
   
    
 
@@ -40,6 +47,8 @@ console.log(products)
       <Header />
       <Routes>
         <Route path="/" element={<SneakerGallery />} />
+        <Route path="/signIn" element={<SignIn />} />
+        <Route path="/signUP" element={<SignUp />} />
         <Route path="/cart" element={<Cart />} />
      
       </Routes>

@@ -2,14 +2,33 @@ import React, { useEffect, useState } from "react";
 
 import ProductCard from "./ProductCard";
 
-import {  useSelector } from "react-redux";
+import {  useDispatch, useSelector } from "react-redux";
 
 import Filter from "./Filter";
+import { inital } from "./store/slices/displaySlice";
+import { fetchProducts } from "./store/slices/productsSlice";
 
 
 function SneakerGallery() {
   const display = useSelector((state) => state.displayReducer.displayProducts);
+  const products = useSelector((state)=> state.productReducer.products)
 
+
+const dispatch = useDispatch()
+
+useEffect(() => {
+  const fetchData =  () => {
+
+     dispatch(fetchProducts());
+  
+  };
+  fetchData()
+}, []);
+  useEffect(()=>{
+    if(products.length>0){
+      dispatch(inital(products))
+    }
+  },[products])
  
   
 if(display.length == 0){
