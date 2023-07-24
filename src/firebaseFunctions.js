@@ -1,5 +1,5 @@
 import { getDocs } from "firebase/firestore";
-import { auth, collectionRef, db, provider } from "./firebaseConfig";
+import { auth, collectionRef, db, provider,provider2 } from "./firebaseConfig";
 
 import { GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 
@@ -17,14 +17,13 @@ export const fetchSneakerData = async () => {
   }
 };
 
-export function signUp(email,password){
-  return createUserWithEmailAndPassword(auth,email,password)
-}
-export function signIn(email,password){
-  return signInWithEmailAndPassword(auth,email,password)
-}
+
 export function logOut(){
   return signOut(auth)
+}
+export function signInGitHub (){
+  
+  return signInWithPopup(auth,provider2)
 }
 export function signInGoogle (){
   
