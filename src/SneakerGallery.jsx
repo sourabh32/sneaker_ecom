@@ -14,16 +14,6 @@ function SneakerGallery() {
   const products = useSelector((state)=> state.productReducer.products)
 
 
-const dispatch = useDispatch()
-
-useEffect(() => {
-  const fetchData =  () => {
-
-     dispatch(fetchProducts());
-  
-  };
-  fetchData()
-}, []);
   useEffect(()=>{
     if(products.length>0){
       dispatch(inital(products))
