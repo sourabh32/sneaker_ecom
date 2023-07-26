@@ -1,7 +1,7 @@
 import { getDocs } from "firebase/firestore";
-import { auth, collectionRef, db, provider,provider2 } from "./firebaseConfig";
+import { auth, collectionRef, provider, provider2 } from "./firebaseConfig";
 
-import { GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { signInWithPopup, signOut } from "firebase/auth";
 
 export const fetchSneakerData = async () => {
   try {
@@ -17,23 +17,30 @@ export const fetchSneakerData = async () => {
   }
 };
 
+export const logOut = async () => {
+  try {
+    await signOut(auth);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-export function logOut(){
-  return signOut(auth)
-}
-export function signInGitHub (){
-  
-  return signInWithPopup(auth,provider2)
-}
-export function signInGoogle (){
-  
-  return signInWithPopup(auth,provider)
-}
-
-
-
-
-
+export const signInWithGithub = async () => {
+  try {
+    const user = await signInWithPopup(auth, provider2);
+    console.log(user);
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const signInWithGoogle = async () => {
+  try {
+    const user = await signInWithPopup(auth, provider);
+    console.log(user);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 // export const signInWithGooglePopup = async () => {
 //   try {
