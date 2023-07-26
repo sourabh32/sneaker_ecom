@@ -35,9 +35,7 @@ const Auth = () => {
       <VStack my="5" spacing={4}>
         <Button
           onClick={() => signInWithGoogle()}
-          color="white"
-          variant={"outline"}
-          bgColor={"black"}
+        colorScheme="blue"
           size="md"
           w="100%"
         >

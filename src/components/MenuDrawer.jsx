@@ -1,16 +1,19 @@
 import React from 'react'
 import { Drawer,DrawerCloseButton,DrawerBody,DrawerContent,Text,HStack,DrawerOverlay,DrawerFooter,VStack } from '@chakra-ui/react'
 import {FaGithub,FaLinkedinIn, FaInstagram} from "react-icons/fa"
+import { Link } from 'react-router-dom'
 const MenuDrawer = ({isOpen,onClose}) => {
   return (
     <Drawer   placement="left" onClose={()=>onClose()} isOpen={isOpen}>
         <DrawerOverlay>
-          <DrawerContent  color={"white"}  bg="black">
+          <DrawerContent colorScheme="gray"  >
             <DrawerCloseButton />
            
             <DrawerBody borderTop={"1px  solid white"} mt="10">
              <VStack h="75%" justifyContent="center" gap="5" fontWeight={"bold"}  alignItems={"flex-start"}>
-           <Text>MENS</Text>
+              <Link to="/sneakers">
+              <Text>MENS</Text></Link>
+          
            <Text>WOMENS</Text>
            <Text>KIDS</Text>
            <Text>TOP RATED</Text>

@@ -25,7 +25,14 @@ const Header = () => {
 
   return (
     <>
-      <Box  p={2}>
+      <Box  bg="rgba(0, 0, 0, 0)" 
+      color="gray.900"
+      pos="sticky"
+      top="0"
+      left="0"
+      width="100%"
+   
+      zIndex="1"  p={2}>
         <HStack justifyContent={"space-between"} alignItems="center">
           <Box>
             <RxHamburgerMenu
@@ -35,7 +42,17 @@ const Header = () => {
             />
           </Box>
           <Box>
-            <Link  to="/"><span style={{fontFamily:"bebas neue",fontSize:"1.5rem"}}>SNEAK.</span></Link>
+            <Link  to="/"><span style={{
+    fontFamily: "Bebas Neue, sans-serif",
+    color:"white",
+    fontSize: "2rem",
+    textShadow: "0 0 5px black, 0 0 5px black, 0 0 5px black",
+    fontWeight: "bold",
+ 
+    textTransform: "uppercase",
+    
+    cursor: "pointer",
+  }}>SNEAK.</span></Link>
           </Box>
 
           <Box>
