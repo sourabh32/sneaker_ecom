@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, IconButton } from '@chakra-ui/react';
+import { Box, Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, IconButton, DrawerFooter, Button, VStack,Text } from '@chakra-ui/react';
 import {AiOutlineClose} from "react-icons/ai"
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,11 +20,11 @@ const CartDrawer = ({onClose,isOpen}) => {
   return (
     <Drawer placement="right" onClose={() =>onClose() } isOpen={isOpen}>
       <DrawerOverlay>
-        <DrawerContent>
+        <DrawerContent fontFamily={"poppins"}>
           <DrawerCloseButton />
-          <DrawerHeader>Your Cart</DrawerHeader>
+          <DrawerHeader fontFamily={"bebas neue"}>CART</DrawerHeader>
 
-          <DrawerBody>
+          <DrawerBody fontFamily={"poppins"}>
 {cartItems.length === 0 ? (
   <Box>Your cart is empty</Box>
 ) : (
@@ -32,21 +32,30 @@ const CartDrawer = ({onClose,isOpen}) => {
     {cartItems.map(item => (
       <Box key={item.id} display="flex" alignItems="center" justifyContent="space-between" mb={4}>
         <img src={item.image} alt={item.brand} width="75" height="75" style={{ borderRadius: '4px' }} />
-        <Box flex="1" ml={4}>
-          <Box fontSize="lg" fontWeight="bold">{item.brand}</Box>
-          <Box>{item.description}</Box>
-          <Box fontWeight="bold">${item.price}</Box>
+        <Box  ml={4}>
+          <Text fontSize="lg" fontWeight="bold">{item.brand}</Text>
+          <Text>{item.description}</Text>
+          <Text fontWeight="bold">${item.price}</Text>
         </Box>
         <AiOutlineClose
+       
           color='red'
           onClick={() => dispatch(removeItemFromCart((item.id)))}
         />
       </Box>
     ))}
-    <Box fontWeight="bold" mt={4}>Total: ${getTotalPrice()}</Box>
+    
   </Box>
 )}
 </DrawerBody>
+<DrawerFooter> 
+  <VStack w="full"  >
+  <Box alignSelf={"flex-start"} fontWeight="bold" mt={4}>Total: ${getTotalPrice()}</Box>
+  <Button w="90%" alignSelf={"center"} >Checkout</Button>
+  
+  </VStack>
+ 
+    </DrawerFooter>
           
         </DrawerContent>
       </DrawerOverlay>

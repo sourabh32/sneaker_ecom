@@ -3,6 +3,7 @@ import { Box, Button, Grid, Heading, LinkBox } from '@chakra-ui/react';
 import ProductCard from './ProductCard';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import MyLink from './MyLink';
 
 const DisplaySneakers = () => {
     const products = useSelector((state)=> state.productReducer.products)
@@ -10,7 +11,7 @@ const DisplaySneakers = () => {
   return (
     <>
     <Heading my={5} textAlign={"center"} fontFamily={"bebas neue"}>SNEAKERS</Heading>
-    <Link ><LinkBox  color={"red.400"} fontWeight={"semibold"} fontFamily={"poppins"} textDecoration={"underline"} textAlign={"center"}>View All</LinkBox></Link>
+    <MyLink title={"view all"} path={"/sneakers/all"} />
     <Grid
       my={10}
       templateColumns={{ base: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' }} 

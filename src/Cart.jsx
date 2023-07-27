@@ -12,7 +12,7 @@ const Cart = () => {
     let cartQuantity= items.length
      const dispatch = useDispatch()
   
-    const handlePaymentSuccess = (token) => {
+    const handlePaymentSuccess = () => {
       // Logic to clear the cart
       dispatch(clearCart())
       // Additional logic or API calls as needed after successful payment...
