@@ -1,24 +1,19 @@
 import React, { useEffect, useState } from "react";
 
-import ProductCard from "./ProductCard";
+
 
 import {  useDispatch, useSelector } from "react-redux";
 
 import Filter from "./Filter";
-import { inital } from "./store/slices/displaySlice";
-import { fetchProducts } from "./store/slices/productsSlice";
+
+import ProductCard from "./components/ProductCard";
+import { Grid } from "@chakra-ui/react";
 
 
 function SneakerGallery() {
   const display = useSelector((state) => state.displayReducer.displayProducts);
   const products = useSelector((state)=> state.productReducer.products)
 
-
-  useEffect(()=>{
-    if(products.length>0){
-      dispatch(inital(products))
-    }
-  },[products])
  
   
 if(display.length == 0){
@@ -27,14 +22,19 @@ if(display.length == 0){
   return (
     <>
       <Filter />
-      <div className="product-container">
+      <Grid
+      my={10}
+      templateColumns={{ base: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' }} 
+      gap={4} 
+      px={[5,10]}
+    >
         {display.map((product) => (
           <ProductCard
             key={product.id}
             product={product}
           />
         ))}
-      </div>
+      </Grid>
     </>
   );
 }

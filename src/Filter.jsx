@@ -1,6 +1,7 @@
 import React, {  useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { clear, filterByCategory, filterBySort } from "./store/slices/displaySlice";
+import { Button, HStack, Select } from "@chakra-ui/react";
 
 const Filter = () => {
   const [selectedSort, setSelectedSort] = useState("");
@@ -38,21 +39,22 @@ const Filter = () => {
     dispatch(clear())
   }
   return (
-    <div>
-      <select value={selectedSort} onChange={handleSortChange}>
+    <HStack  fontFamily={"poppins"}  mx="10%" flexWrap={"wrap"}>
+      
+      <Select fontWeight={"bold"} w="45%" variant={"filled"} value={selectedSort} onChange={handleSortChange}>
         <option value="">Sort By</option>
         <option value="lth">Price (Lowest)</option>
         <option value="htl">Price (Highest)</option>
         <option value="p">Popularity (High)</option>
-      </select>
-      <select value={selectedCategory} onChange={handleCategoryChange}>
+      </Select>
+      <Select fontWeight={"bold"}  variant={"filled"} w="45%"   value={selectedCategory} onChange={handleCategoryChange}>
         <option value="">All</option>
         <option value="mens">Mens</option>
         <option value="womens">Womens</option>
         <option value="kids">Kids</option>
-      </select>
-      <button onClick={handleClear}>Clear Filters</button>
-    </div>
+      </Select>
+      <Button onClick={handleClear}>Clear Filters</Button>
+    </HStack>
   );
 };
 

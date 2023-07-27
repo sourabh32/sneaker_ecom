@@ -11,12 +11,17 @@ const MenuDrawer = ({isOpen,onClose}) => {
            
             <DrawerBody borderTop={"1px  solid white"} mt="10">
              <VStack h="75%" justifyContent="center" gap="5" fontWeight={"bold"}  alignItems={"flex-start"}>
-              <Link to="/sneakers">
-              <Text>MENS</Text></Link>
+              <Link to="/sneakers/men">
+              
+              <Text onClick={onClose}>MENS</Text></Link>
+              <Link to="/sneakers/women">
+              <Text onClick={onClose}>WOMENS</Text></Link>
+              <Link to="/sneakers/kids">
+              <Text onClick={onClose}>KIDS</Text></Link>
+              <Link to="/sneakers/all">
+              <Text onClick={onClose}>TOP RATED</Text></Link>
+         
           
-           <Text>WOMENS</Text>
-           <Text>KIDS</Text>
-           <Text>TOP RATED</Text>
               </VStack>
             </DrawerBody>
             <DrawerFooter borderTop="1px solid white" >

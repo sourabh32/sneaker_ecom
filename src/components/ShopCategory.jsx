@@ -24,21 +24,22 @@ const ShopCategory = () => {
       name: 'KIDS',
       link: '#category3',
     },
-    // Add more categories here
+    
   ];
 
   return (
     <Grid
+    bg={"gray.200"}
     fontFamily={"poppins"}
    my={10}
-      px={[5,10]}
+      p={[5,10]}
       templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' }} 
       gap={4} 
     >
       {categories.map((category) => (
         <Box key={category.id} borderWidth="1px" borderRadius="lg" overflow="hidden">
           
-          <Image objectFit={"cover"} h="50vh" w="full" src={category.image} alt={category.name} />
+          <Image objectFit={"cover"} h="40vh" w="full" src={category.image} alt={category.name} />
 
         
           <Text textAlign={"center"} fontWeight="bold" fontSize="lg" mt={2}>
@@ -46,7 +47,7 @@ const ShopCategory = () => {
           </Text>
 
          
-          <Link textAlign={"center"} color="teal.500" href={category.link} mt={2} display="block">
+          <Link color="gray" fontWeight={"bold"} textAlign={"center"} href={category.link} mt={2} display="block">
             View Category
           </Link>
         </Box>

@@ -10,7 +10,7 @@ const DisplaySneakers = () => {
   return (
     <>
     <Heading my={5} textAlign={"center"} fontFamily={"bebas neue"}>SNEAKERS</Heading>
-    <Link textAlign="center"><LinkBox color={"red.400"} fontWeight={"semibold"} fontFamily={"poppins"} textDecoration={"underline"} textAlign={"center"}>View All</LinkBox></Link>
+    <Link ><LinkBox  color={"red.400"} fontWeight={"semibold"} fontFamily={"poppins"} textDecoration={"underline"} textAlign={"center"}>View All</LinkBox></Link>
     <Grid
       my={10}
       templateColumns={{ base: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' }} 
