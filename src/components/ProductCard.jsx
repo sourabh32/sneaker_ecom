@@ -4,6 +4,7 @@ import { addItemToCart } from "../store/slices/cartSlice";
 import { useDispatch } from "react-redux";
 import { BiCartAdd } from "react-icons/bi";
 import LazyImage from "./LazyImage";
+import { toast } from "react-hot-toast";
 
 const ProductCard = ({ product }) => {
   const { brand, price, image } = product;
@@ -35,7 +36,9 @@ const ProductCard = ({ product }) => {
             cursor: "pointer",
            
           }}
-          onClick={() => dispatch(addItemToCart({ ...product }))}
+          onClick={() => {dispatch(addItemToCart({ ...product }))
+          toast.success('item added')
+        }}
           size={"25"}
         />
        

@@ -1,16 +1,29 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Box, Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, IconButton, DrawerFooter, Button, VStack,Text } from '@chakra-ui/react';
 import {AiOutlineClose} from "react-icons/ai"
 
 import { useDispatch, useSelector } from 'react-redux';
 import { removeItemFromCart } from '../store/slices/cartSlice';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
+import { userContext } from '../context/UserContext';
 
 const CartDrawer = ({onClose,isOpen}) => {
   
   const cartItems = useSelector(state=> state.cartReducer.cartItems)
-  
+  const user = useContext(userContext)
   const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const handleCheckout = () =>{
+    onClose()
+    if(user){
+      navigate("/cart")
+    }
+    else{
+      toast.error("login to checkout")
+      navigate("/authenticate")
+    }
+  }
 
 console.log(cartItems)
   const getTotalPrice = () => {
@@ -41,7 +54,9 @@ console.log(cartItems)
         <AiOutlineClose
        
           color='red'
-          onClick={() => dispatch(removeItemFromCart((item.id)))}
+          onClick={() => {dispatch(removeItemFromCart((item.id)))
+            toast.success(`item removed`)
+          }}
         />
       </Box>
     ))}
@@ -52,9 +67,9 @@ console.log(cartItems)
 <DrawerFooter> 
   <VStack w="full"  >
   <Box alignSelf={"flex-start"} fontWeight="bold" mt={4}>Total: ${getTotalPrice()}</Box>
-  <Link to="/cart">
-  <Button onClick={onClose} w="90%" alignSelf={"center"} >Checkout</Button>
-  </Link>
+ 
+  <Button onClick={handleCheckout} w="90%" alignSelf={"center"} >Checkout</Button>
+  
   </VStack>
  
     </DrawerFooter>

@@ -2,7 +2,7 @@ import { Box, Flex, IconButton, Link, Text, VStack } from '@chakra-ui/react';
 import {FaGithub,FaLinkedinIn, FaInstagram} from "react-icons/fa"
 const Footer = () => {
     return (
-      <Box as="footer" bg="gray.100" py="6">
+      <Box as="footer"  bg="gray.100" bottom="0" left="0" right="0" pos="relative"  py="6">
         <VStack spacing="4">
           {/* Social Media Icons */}
           <Flex>

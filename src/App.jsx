@@ -8,6 +8,7 @@ import { inital } from "./store/slices/displaySlice";
 import Header from "./Header";
 import Loader from "./Loader";
 import { Box } from "@chakra-ui/react";
+import { Toaster } from "react-hot-toast";
 
 const Home = React.lazy(() => import("./pages/Home"));
 const SneakerGallery = React.lazy(() => import("./SneakerGallery"));
@@ -39,6 +40,7 @@ useEffect(()=>{
 
   return (
     <Router>
+      <Toaster />
       <Header />
       <React.Suspense fallback={
         <Box w="100%" h="90vh">

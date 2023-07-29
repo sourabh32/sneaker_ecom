@@ -2,6 +2,7 @@ import { getDocs } from "firebase/firestore";
 import { auth, collectionRef, provider, provider2 } from "./firebaseConfig";
 
 import { signInWithPopup, signOut } from "firebase/auth";
+import { toast } from "react-hot-toast";
 
 export const fetchSneakerData = async () => {
   try {
@@ -20,6 +21,7 @@ export const fetchSneakerData = async () => {
 export const logOut = async () => {
   try {
     await signOut(auth);
+    toast.success(`logged out`)
   } catch (error) {
     console.log(error);
   }
@@ -28,6 +30,7 @@ export const logOut = async () => {
 export const signInWithGithub = async () => {
   try {
     const user = await signInWithPopup(auth, provider2);
+    toast.success(`sucessfuly logged in`)
     console.log(user);
   } catch (error) {
     console.log(error);
@@ -36,7 +39,8 @@ export const signInWithGithub = async () => {
 export const signInWithGoogle = async () => {
   try {
     const user = await signInWithPopup(auth, provider);
-    console.log(user);
+    toast.success(`sucessfuly logged in`)
+    console.log(user.displayName);
   } catch (error) {
     console.log(error);
   }

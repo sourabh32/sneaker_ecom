@@ -48,7 +48,9 @@ const CartProduct = ({ item }) => {
           icon={<AiOutlineClose />}
           size="sm"
           variant="outline"
-          onClick={() =>dispatch(removeItemFromCart(id))}
+          onClick={() =>{dispatch(removeItemFromCart(id))
+            toast.success('item removed')
+          }}
           ml={2}
         />
       </Box>

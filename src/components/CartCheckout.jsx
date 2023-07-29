@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 const CartCheckout = ({cartTotal}) => {
     const dispatch = useDispatch()
     const handlePaymentSuccess = () => {
-        
+        toast.success(`payement recieved`)
         dispatch(clearCart())
         
       };

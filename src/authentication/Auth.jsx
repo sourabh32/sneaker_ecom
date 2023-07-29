@@ -13,7 +13,7 @@ const Auth = () => {
   console.log(user);
 
   return (
-    <Container fontFamily={"poppins"} centerContent mt={8}>
+    <Container h="90vh" fontFamily={"poppins"} centerContent mt={8}>
 
       {
         user ? (
