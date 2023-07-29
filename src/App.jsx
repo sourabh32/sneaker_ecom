@@ -8,6 +8,7 @@ import { inital } from "./store/slices/displaySlice";
 import Header from "./Header";
 import Loader from "./Loader";
 import { Box } from "@chakra-ui/react";
+
 const Home = React.lazy(() => import("./pages/Home"));
 const SneakerGallery = React.lazy(() => import("./SneakerGallery"));
 const Men = React.lazy(() => import("./components/Men"));
@@ -15,7 +16,7 @@ const Women = React.lazy(() => import("./components/Women"));
 const Kids = React.lazy(() => import("./components/Kids"));
 const Auth = React.lazy(() => import("./authentication/Auth"));
 const Cart = React.lazy(() => import("./pages/Cart"));
-
+const Footer = React.lazy(()=>import("./components/Footer"))
 
 
 
@@ -55,7 +56,9 @@ useEffect(()=>{
         <Route path="/authenticate" element={<Auth />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
+      <Footer />
       </React.Suspense >
+
     </Router>
   );
 }

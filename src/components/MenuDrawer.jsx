@@ -1,5 +1,5 @@
 import React from 'react'
-import { Drawer,DrawerCloseButton,DrawerBody,DrawerContent,Text,HStack,DrawerOverlay,DrawerFooter,VStack } from '@chakra-ui/react'
+import { Drawer,DrawerCloseButton,DrawerBody,DrawerContent,Text,HStack,DrawerOverlay,DrawerFooter,VStack,Flex,IconButton } from '@chakra-ui/react'
 import {FaGithub,FaLinkedinIn, FaInstagram} from "react-icons/fa"
 import { Link } from 'react-router-dom'
 const MenuDrawer = ({isOpen,onClose}) => {
@@ -25,11 +25,12 @@ const MenuDrawer = ({isOpen,onClose}) => {
               </VStack>
             </DrawerBody>
             <DrawerFooter borderTop="1px solid white" >
-              <HStack gap="5"  w={"100%"} justifyContent={"flex-start"}>
-            <FaLinkedinIn />
-            <FaGithub />
-            <FaInstagram />
-            </HStack>
+            <Flex  w="full" justifyContent={"flex-start"}>
+            <IconButton as={Link} href="#" aria-label="Facebook" icon={<FaGithub />} size="lg" variant="ghost" colorScheme="blue" />
+            <IconButton as={Link} href="#" aria-label="Twitter" icon={<FaInstagram />} size="lg" variant="ghost" colorScheme="blue" />
+            <IconButton as={Link} href="#" aria-label="Instagram" icon={<FaLinkedinIn />} size="lg" variant="ghost" colorScheme="pink" />
+          </Flex>
+           
             </DrawerFooter>
           </DrawerContent>
         </DrawerOverlay>

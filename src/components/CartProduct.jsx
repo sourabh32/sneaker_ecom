@@ -1,28 +1,29 @@
 import React from "react";
-import { Box, Flex, Image, Text, Button, IconButton } from "@chakra-ui/react";
+import { Box, Flex, Image, Text, Button, IconButton, HStack } from "@chakra-ui/react";
 import { AiOutlinePlus, AiOutlineMinus, AiOutlineClose } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { addItemToCart, decreItemFromCart, removeItemFromCart } from "../store/slices/cartSlice";
 
 const CartProduct = ({ item }) => {
-  const { image, name, price, quantity,id } = item;
+  const { image, brand, price, quantity,id,description } = item;
   const dispatch = useDispatch()
 
   return (
     <Flex align="center" justify="space-between" p={2} borderBottom="1px solid #E2E8F0">
       <Box display="flex" alignItems="center">
         <Image src={image} boxSize="80px" objectFit="cover" alt={name} mr={4} />
+        
         <Box>
-          <Text fontWeight="semibold">{name}</Text>
+        <Text fontWeight="bold">{brand}</Text>
+        <Text fontWeight={"semibold"}>{description}</Text>
+          
           <Text color="gray.500" fontSize="sm">
             Price: ${price.toFixed(2)}
           </Text>
-          <Text color="gray.500" fontSize="sm">
-            Quantity: {quantity}
-          </Text>
+         
         </Box>
       </Box>
-      <Box display="flex" alignItems="center">
+      <Box   display="flex" alignItems="center">
         <IconButton
           aria-label="Increase Quantity"
           icon={<AiOutlinePlus />}
@@ -30,6 +31,9 @@ const CartProduct = ({ item }) => {
           variant="outline"
           onClick={() => dispatch(addItemToCart(item))}
         />
+         <Text textAlign={"center"} w="20"  fontWeight={"semibold"} color="gray.500" fontSize="sm">
+             {quantity}
+          </Text>
         <IconButton
           aria-label="Decrease Quantity"
           icon={<AiOutlineMinus />}

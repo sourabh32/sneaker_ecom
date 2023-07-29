@@ -12,7 +12,7 @@ const CartDrawer = ({onClose,isOpen}) => {
   
   const dispatch = useDispatch()
 
-
+console.log(cartItems)
   const getTotalPrice = () => {
     return cartItems.reduce((total, item) => total + item.price, 0);
   };

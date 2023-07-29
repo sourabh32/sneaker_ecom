@@ -31,8 +31,8 @@ const ShopCategory = () => {
     <Grid
       bg={"gray.200"}
       fontFamily={"poppins"}
-      my={10}
-      p={[5, 10]}
+      mt={10}
+      p={ 10}
       templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }}
       gap={4}
     >
