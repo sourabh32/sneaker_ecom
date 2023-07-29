@@ -7,7 +7,8 @@ import {  useDispatch, useSelector } from "react-redux";
 import Filter from "./Filter";
 
 import ProductCard from "./components/ProductCard";
-import { Grid } from "@chakra-ui/react";
+import { Box, Grid } from "@chakra-ui/react";
+import Loader from "./Loader";
 
 
 function SneakerGallery() {
@@ -17,7 +18,7 @@ function SneakerGallery() {
  
   
 if(display.length == 0){
-  return <h2>loading ...</h2>
+  return <Box w="100%" display="grid" placeContent={"center"} h="90vh"><Loader /></Box>
 }
   return (
     <>

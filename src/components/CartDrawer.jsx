@@ -53,7 +53,7 @@ const CartDrawer = ({onClose,isOpen}) => {
   <VStack w="full"  >
   <Box alignSelf={"flex-start"} fontWeight="bold" mt={4}>Total: ${getTotalPrice()}</Box>
   <Link to="/cart">
-  <Button w="90%" alignSelf={"center"} >Checkout</Button>
+  <Button onClick={onClose} w="90%" alignSelf={"center"} >Checkout</Button>
   </Link>
   </VStack>
  
