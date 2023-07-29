@@ -14,7 +14,7 @@ const Men = React.lazy(() => import("./components/Men"));
 const Women = React.lazy(() => import("./components/Women"));
 const Kids = React.lazy(() => import("./components/Kids"));
 const Auth = React.lazy(() => import("./authentication/Auth"));
-const Cart = React.lazy(() => import("./Cart"));
+const Cart = React.lazy(() => import("./pages/Cart"));
 
 
 

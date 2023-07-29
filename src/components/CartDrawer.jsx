@@ -4,6 +4,7 @@ import {AiOutlineClose} from "react-icons/ai"
 
 import { useDispatch, useSelector } from 'react-redux';
 import { removeItemFromCart } from '../store/slices/cartSlice';
+import { Link } from 'react-router-dom';
 
 const CartDrawer = ({onClose,isOpen}) => {
   
@@ -51,8 +52,9 @@ const CartDrawer = ({onClose,isOpen}) => {
 <DrawerFooter> 
   <VStack w="full"  >
   <Box alignSelf={"flex-start"} fontWeight="bold" mt={4}>Total: ${getTotalPrice()}</Box>
+  <Link to="/cart">
   <Button w="90%" alignSelf={"center"} >Checkout</Button>
-  
+  </Link>
   </VStack>
  
     </DrawerFooter>
