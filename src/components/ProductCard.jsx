@@ -3,6 +3,7 @@ import { Box, Image, Text, Button, position } from "@chakra-ui/react";
 import { addItemToCart } from "../store/slices/cartSlice";
 import { useDispatch } from "react-redux";
 import { BiCartAdd } from "react-icons/bi";
+import LazyImage from "./LazyImage";
 
 const ProductCard = ({ product }) => {
   const { brand, price, image } = product;
@@ -14,7 +15,8 @@ const ProductCard = ({ product }) => {
       overflow="hidden"
       boxShadow="md"
     >
-      <Image objectFit="cover" src={image} alt="Product" />
+      <LazyImage src={image} alt="Product"  />
+      {/* <Image objectFit="cover" src={image} alt="Product" /> */}
 
       <Box p={4}>
         <Text fontWeight="bold" fontSize="lg" mb={2}>

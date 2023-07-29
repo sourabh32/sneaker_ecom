@@ -1,18 +1,23 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import SneakerGallery from "./SneakerGallery";
-import Cart from "./Cart";
+import { fetchProducts } from "./store/slices/productsSlice";
+import React, { useEffect } from "react";
+import { inital } from "./store/slices/displaySlice";
+
 
 import Header from "./Header";
+import Loader from "./Loader";
+import { Box } from "@chakra-ui/react";
+const Home = React.lazy(() => import("./pages/Home"));
+const SneakerGallery = React.lazy(() => import("./SneakerGallery"));
+const Men = React.lazy(() => import("./components/Men"));
+const Women = React.lazy(() => import("./components/Women"));
+const Kids = React.lazy(() => import("./components/Kids"));
+const Auth = React.lazy(() => import("./authentication/Auth"));
+const Cart = React.lazy(() => import("./Cart"));
 
-import Auth from "./authentication/Auth";
-import Home from "./pages/Home";
-import { fetchProducts } from "./store/slices/productsSlice";
-import { useEffect } from "react";
-import Men from "./components/Men";
-import Women from "./components/Women";
-import Kids from "./components/Kids";
-import { inital } from "./store/slices/displaySlice";
+
+
 
 function App() {
   const products = useSelector((state) => state.productReducer.products);
@@ -20,13 +25,9 @@ function App() {
 const dispatch = useDispatch()
 
 useEffect(() => {
-  const fetchData =  () => {
-
-     dispatch(fetchProducts());
-  
-  };
-  fetchData()
+  dispatch(fetchProducts())
 }, []);
+
 useEffect(()=>{
   if(products.length>0){
     dispatch(inital(products))
@@ -38,6 +39,12 @@ useEffect(()=>{
   return (
     <Router>
       <Header />
+      <React.Suspense fallback={
+        <Box w="100%" h="90vh">
+         <Loader />
+         </Box>
+        
+      }>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sneakers/all" element={<SneakerGallery />} />
@@ -48,6 +55,7 @@ useEffect(()=>{
         <Route path="/authenticate" element={<Auth />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
+      </React.Suspense >
     </Router>
   );
 }

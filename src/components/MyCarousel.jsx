@@ -3,11 +3,11 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel'
 
 
-import asset1 from "../assets/asset1.jpeg"
-import asset6 from "../assets/asset6.jpeg"
-import asset7 from "../assets/asset7.jpeg"
-import asset5 from "../assets/asset5.jpeg"
-import asset8 from "../assets/asset8.jpeg"
+import asset1 from "../assets/asset1.jpg"
+import asset6 from "../assets/asset6.jpg"
+
+import asset5 from "../assets/asset5.jpg"
+import asset8 from "../assets/asset8.jpg"
 
 const MyCarousel = () => {
     
@@ -31,10 +31,7 @@ const handleItemClick = () => {
         <img src={asset6} />
     
     </div>
-    <div style={{ pointerEvents: 'none' }} >
-        <img src={asset7} />
-       
-    </div>
+   
     <div style={{ pointerEvents: 'none' }} >
         <img src={asset8} />
         
