@@ -9,6 +9,7 @@ import Header from "./Header";
 import Loader from "./Loader";
 import { Box } from "@chakra-ui/react";
 import { Toaster } from "react-hot-toast";
+import OrderReceivedPage from "./components/OrderSucsess";
 
 const Home = React.lazy(() => import("./pages/Home"));
 const SneakerGallery = React.lazy(() => import("./SneakerGallery"));
@@ -57,6 +58,7 @@ useEffect(()=>{
         <Route path="/sneakers/kids" element={<Kids />} />
         <Route path="/authenticate" element={<Auth />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/orderSucsess" element={<OrderReceivedPage  />} />
       </Routes>
       <Footer />
       </React.Suspense >
