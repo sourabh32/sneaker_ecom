@@ -1,4 +1,4 @@
-import { Box, Flex, Avatar, Text, VStack, StackDivider,HStack } from '@chakra-ui/react';
+import { Box, Flex, Avatar, Text, VStack, StackDivider,HStack, Stack } from '@chakra-ui/react';
 
 // Sample data for two product reviews
 const reviews = [
@@ -26,7 +26,7 @@ const reviews = [
 
 const ProductReviews = () => {
   return (
-    <HStack my="10" fontFamily={"poppins"} spacing="4" align="stretch" >
+    <Stack flexDirection={["column","row"]} my="10" fontFamily={"poppins"} spacing="4" align="stretch" >
       {reviews.map((review) => (
         <Flex key={review.id} p="4"   >
          
@@ -53,7 +53,7 @@ const ProductReviews = () => {
           </VStack>
         </Flex>
       ))}
-    </HStack>
+    </Stack>
   );
 };
 
