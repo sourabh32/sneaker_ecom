@@ -2,6 +2,7 @@ import React from 'react'
 import { Drawer,DrawerCloseButton,DrawerBody,DrawerContent,Text,HStack,DrawerOverlay,DrawerFooter,VStack,Flex,IconButton } from '@chakra-ui/react'
 import {FaGithub,FaLinkedinIn, FaInstagram} from "react-icons/fa"
 import { Link } from 'react-router-dom'
+import SocialIcons from './SocialIcons'
 const MenuDrawer = ({isOpen,onClose}) => {
   return (
     <Drawer   placement="left" onClose={()=>onClose()} isOpen={isOpen}>
@@ -25,11 +26,7 @@ const MenuDrawer = ({isOpen,onClose}) => {
               </VStack>
             </DrawerBody>
             <DrawerFooter borderTop="1px solid white" >
-            <Flex  w="full" justifyContent={"flex-start"}>
-            <IconButton as={Link} href="#" aria-label="Facebook" icon={<FaGithub />} size="lg" variant="ghost" colorScheme="blue" />
-            <IconButton as={Link} href="#" aria-label="Twitter" icon={<FaInstagram />} size="lg" variant="ghost" colorScheme="blue" />
-            <IconButton as={Link} href="#" aria-label="Instagram" icon={<FaLinkedinIn />} size="lg" variant="ghost" colorScheme="pink" />
-          </Flex>
+            <SocialIcons />
            
             </DrawerFooter>
           </DrawerContent>

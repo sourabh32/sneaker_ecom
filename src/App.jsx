@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "./store/slices/productsSlice";
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import { inital } from "./store/slices/displaySlice";
 
 
@@ -43,7 +43,7 @@ useEffect(()=>{
     <Router>
       <Toaster />
       <Header />
-      <React.Suspense fallback={
+      <Suspense fallback={
         <Box w="100%" h="90vh">
          <Loader />
          </Box>
@@ -61,7 +61,7 @@ useEffect(()=>{
         <Route path="/orderSucsess" element={<OrderReceivedPage  />} />
       </Routes>
       <Footer />
-      </React.Suspense >
+      </Suspense >
 
     </Router>
   );
