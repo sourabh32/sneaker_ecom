@@ -1,6 +1,6 @@
 import React from 'react'
 import StripeCheckout from 'react-stripe-checkout'
-import { clearCart } from '../store/slices/cartSlice';
+import { clearCart } from '../../store/slices/cartSlice';
 import { useDispatch } from 'react-redux';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';

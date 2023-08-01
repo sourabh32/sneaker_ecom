@@ -1,8 +1,9 @@
 import React from "react";
 import { Grid, Box, Image, Text, Link } from "@chakra-ui/react";
-import men from "../assets/men.jpg";
-import women from "../assets/women.jpg";
-import kids from "../assets/kids.jpg";
+import men from "../../assets/men.jpg";
+import women from "../../assets/men.jpg";
+import kids from "../../assets/men.jpg";
+
 import MyLink from "./MyLink";
 
 const ShopCategory = () => {

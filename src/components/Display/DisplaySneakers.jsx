@@ -1,10 +1,10 @@
 import React from 'react';
 import { Box, Button, Grid, Heading, LinkBox } from '@chakra-ui/react';
-import ProductCard from './ProductCard';
+import ProductCard from "../ProductCard/ProductCard"
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import MyLink from './MyLink';
-import Loader from '../Loader';
+import MyLink from "../Additionals/MyLink"
+import Loader from "../Additionals/Loader"
 
 const DisplaySneakers = () => {
     const products = useSelector((state)=> state.productReducer.products)

@@ -2,7 +2,7 @@ import React from 'react'
 import { Drawer,DrawerCloseButton,DrawerBody,DrawerContent,Text,HStack,DrawerOverlay,DrawerFooter,VStack,Flex,IconButton } from '@chakra-ui/react'
 import {FaGithub,FaLinkedinIn, FaInstagram} from "react-icons/fa"
 import { Link } from 'react-router-dom'
-import SocialIcons from './SocialIcons'
+import SocialIcons from '../Footer/SocialIcons'
 const MenuDrawer = ({isOpen,onClose}) => {
   return (
     <Drawer   placement="left" onClose={()=>onClose()} isOpen={isOpen}>

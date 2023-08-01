@@ -3,10 +3,10 @@ import { Box, Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, Dr
 import {AiOutlineClose} from "react-icons/ai"
 
 import { useDispatch, useSelector } from 'react-redux';
-import { removeItemFromCart } from '../store/slices/cartSlice';
+import { removeItemFromCart } from '../../store/slices/cartSlice';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
-import { userContext } from '../context/UserContext';
+import { userContext } from '../../context/UserContext';
 
 const CartDrawer = ({onClose,isOpen}) => {
   

@@ -1,7 +1,7 @@
-import DisplaySneakers from "../components/DisplaySneakers"
-import MyCarousel from "../components/MyCarousel"
-import ProductReviews from "../components/ProductReviews"
-import ShopCategory from "../components/ShopCategory"
+import DisplaySneakers from "../components/Display/DisplaySneakers"
+import MyCarousel from "../components/Additionals/MyCarousel"
+import ProductReviews from "../components/Additionals/ProductReviews"
+import ShopCategory from "../components/Additionals/ShopCategory"
 
 const Home = () => {
   return (

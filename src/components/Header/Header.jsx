@@ -5,8 +5,8 @@ import { HiOutlineUserCircle } from "react-icons/hi";
 import { RxHamburgerMenu } from "react-icons/rx";
 
 import { Box, useDisclosure, HStack } from "@chakra-ui/react";
-import CartDrawer from "./components/CartDrawer";
-import MenuDrawer from "./components/MenuDrawer";
+import CartDrawer from "../Cart/CartDrawer";
+import MenuDrawer from "./MenuDrawer";
 import Logo from "./Logo";
 
 const Header = () => {

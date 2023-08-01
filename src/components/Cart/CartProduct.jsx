@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Flex, Image, Text, Button, IconButton, HStack } from "@chakra-ui/react";
 import { AiOutlinePlus, AiOutlineMinus, AiOutlineClose } from "react-icons/ai";
 import { useDispatch } from "react-redux";
-import { addItemToCart, decreItemFromCart, removeItemFromCart } from "../store/slices/cartSlice";
+import { addItemToCart, decreItemFromCart, removeItemFromCart } from "../../store/slices/cartSlice";
 
 const CartProduct = ({ item }) => {
   const { image, brand, price, quantity,id,description } = item;

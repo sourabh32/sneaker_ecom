@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Image, Text, Button, position } from "@chakra-ui/react";
-import { addItemToCart } from "../store/slices/cartSlice";
+import { addItemToCart } from "../../store/slices/cartSlice";
 import { useDispatch } from "react-redux";
 import { BiCartAdd } from "react-icons/bi";
 import LazyImage from "./LazyImage";

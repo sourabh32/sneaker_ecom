@@ -1,9 +1,9 @@
 
 import { Box, Text, VStack, Button } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
-import CartProduct from "../components/CartProduct";
+import CartProduct from "../components/Cart/CartProduct";
 import {Link} from "react-router-dom"
-import CartCheckout from "../components/CartCheckout";
+import CartCheckout from "../components/Cart/CartCheckout";
 const CartPage = () => {
     const cartItems = useSelector(state=> state.cartReducer.cartItems)
 

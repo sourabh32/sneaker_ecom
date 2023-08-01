@@ -1,7 +1,7 @@
 
 import { Grid, Heading } from '@chakra-ui/react'
 
-import ProductCard from './ProductCard'
+import ProductCard from '../ProductCard/ProductCard'
 import { useSelector } from 'react-redux'
 const Women = () => {
     const products = useSelector((state)=> state.productReducer.products)

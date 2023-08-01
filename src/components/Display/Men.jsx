@@ -1,13 +1,13 @@
-
 import { Grid, Heading } from '@chakra-ui/react'
 
-import ProductCard from './ProductCard'
+import ProductCard from '../ProductCard/ProductCard'
 import { useSelector } from 'react-redux'
-const Kids = () => {
+
+const Men = () => {
     const products = useSelector((state)=> state.productReducer.products)
   return (
     <>
-    <Heading my={5} textAlign={"center"} fontFamily={"bebas neue"}>KIDS</Heading>
+    <Heading my={5} textAlign={"center"} fontFamily={"bebas neue"}>MENS</Heading>
    
     <Grid
       my={10}
@@ -20,7 +20,7 @@ const Kids = () => {
       products.length>0 &&
    
      products.filter(
-        (item) => item.category == "kids"
+        (item) => item.category == "mens"
       ).map((product) => <ProductCard product={product} key={product.id} />)
      }
      
@@ -29,4 +29,4 @@ const Kids = () => {
   )
 }
 
-export default Kids
+export default Men

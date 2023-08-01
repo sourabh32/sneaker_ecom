@@ -4,11 +4,10 @@ import React, { useEffect, useState } from "react";
 
 import {  useDispatch, useSelector } from "react-redux";
 
-import Filter from "./Filter";
-
-import ProductCard from "./components/ProductCard";
+import Filter from "../../Filter";
+import ProductCard from '../ProductCard/ProductCard'
 import { Box, Grid } from "@chakra-ui/react";
-import Loader from "./Loader";
+import Loader from "../Additionals/Loader";
 
 
 function SneakerGallery() {

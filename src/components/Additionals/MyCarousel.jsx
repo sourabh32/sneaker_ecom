@@ -3,11 +3,11 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel'
 
 
-import asset1 from "../assets/asset1.jpg"
-import asset6 from "../assets/asset6.jpg"
+import asset1 from "../../assets/asset1.jpg"
+import asset6 from "../../assets/asset6.jpg"
 
-import asset5 from "../assets/asset5.jpg"
-import asset8 from "../assets/asset8.jpg"
+import asset5 from "../../assets/asset5.jpg"
+import asset8 from "../../assets/asset8.jpg"
 
 const MyCarousel = () => {
     

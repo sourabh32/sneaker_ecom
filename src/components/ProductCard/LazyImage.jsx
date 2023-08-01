@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Box, Image } from '@chakra-ui/react';
 
-import Loader from '../Loader';
+import Loader from '../Additionals/Loader';
 
 const LazyImage = ({src,alt}) => {
     const [imageLoaded, setImageLoaded] = useState(false);

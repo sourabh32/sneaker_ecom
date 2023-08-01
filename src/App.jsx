@@ -5,20 +5,21 @@ import React, { Suspense, useEffect } from "react";
 import { inital } from "./store/slices/displaySlice";
 
 
-import Header from "./Header";
-import Loader from "./Loader";
+import Header from "./components/Header/Header";
+import Loader from "./components/Additionals/Loader";
 import { Box } from "@chakra-ui/react";
 import { Toaster } from "react-hot-toast";
-import OrderReceivedPage from "./components/OrderSucsess";
+
 
 const Home = React.lazy(() => import("./pages/Home"));
-const SneakerGallery = React.lazy(() => import("./SneakerGallery"));
-const Men = React.lazy(() => import("./components/Men"));
-const Women = React.lazy(() => import("./components/Women"));
-const Kids = React.lazy(() => import("./components/Kids"));
+const SneakerGallery = React.lazy(() => import("./components/Display/SneakerGallery"));
+const Men = React.lazy(() => import("./components/Display/Men"));
+const Women = React.lazy(() => import("./components/Display/Women"));
+const Kids = React.lazy(() => import("./components/Display/Kids"));
 const Auth = React.lazy(() => import("./authentication/Auth"));
 const Cart = React.lazy(() => import("./pages/Cart"));
-const Footer = React.lazy(()=>import("./components/Footer"))
+const Footer = React.lazy(()=>import("./components/Footer/Footer"))
+const OrderReceivedPage = React.lazy(()=> import("./components/Additionals/OrderSucsess"))
 
 
 
