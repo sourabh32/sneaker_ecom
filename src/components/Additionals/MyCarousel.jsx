@@ -10,11 +10,7 @@ import asset5 from "../../assets/asset5.jpg"
 import asset8 from "../../assets/asset8.jpg"
 
 const MyCarousel = () => {
-    
-const handleItemClick = () => {
-    // Perform any actions you want on item click
-    console.log(`Item clicked:`);
-  };
+
   return (
     <Carousel stopOnHover={false}
     
