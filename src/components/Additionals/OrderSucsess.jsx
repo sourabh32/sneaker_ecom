@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Text, VStack, Button, Icon, Container } from "@chakra-ui/react";
+import {  Text, VStack, Button, Icon, Container } from "@chakra-ui/react";
 import { CheckCircleIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 

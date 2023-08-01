@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react';
-import { Box, Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, IconButton, DrawerFooter, Button, VStack,Text } from '@chakra-ui/react';
+import React, { useContext } from 'react';
+import { Box, Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerFooter, Button, VStack,Text } from '@chakra-ui/react';
 import {AiOutlineClose} from "react-icons/ai"
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,7 +25,7 @@ const CartDrawer = ({onClose,isOpen}) => {
     }
   }
 
-console.log(cartItems)
+
   const getTotalPrice = () => {
     return cartItems.reduce((total, item) => total + item.price, 0);
   };

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
 
 
 
-import {  useDispatch, useSelector } from "react-redux";
+
+import {  useSelector } from "react-redux";
 
 import Filter from "../../Filter";
 import ProductCard from '../ProductCard/ProductCard'
@@ -12,7 +12,7 @@ import Loader from "../Additionals/Loader";
 
 function SneakerGallery() {
   const display = useSelector((state) => state.displayReducer.displayProducts);
-  const products = useSelector((state)=> state.productReducer.products)
+
 
  
   
