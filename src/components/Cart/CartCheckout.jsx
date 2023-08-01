@@ -1,15 +1,18 @@
-import React from 'react'
+import React,  from 'react'
 import StripeCheckout from 'react-stripe-checkout'
 import { clearCart } from '../../store/slices/cartSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 import shoe from '../../assets/shoe.png'
+
 const CartCheckout = ({cartTotal}) => {
+ 
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const handlePaymentSuccess = () => {
+    const handlePaymentSuccess =  () => {
         toast.success(`payement recieved`)
+        
         dispatch(clearCart())
         navigate("/orderSucsess")
       };

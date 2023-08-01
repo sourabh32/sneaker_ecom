@@ -1,5 +1,5 @@
 import { getDocs } from "firebase/firestore";
-import { auth, collectionRef, provider, provider2 } from "./firebaseConfig";
+import { auth, collectionRef,orederRef, db, provider, provider2 } from "./firebaseConfig";
 
 import { signInWithPopup, signOut } from "firebase/auth";
 import { toast } from "react-hot-toast";
@@ -45,6 +45,14 @@ export const signInWithGoogle = async () => {
     console.log(error);
   }
 };
+
+
+
+
+
+
+
+
 
 // export const signInWithGooglePopup = async () => {
 //   try {

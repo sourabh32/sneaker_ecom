@@ -11,7 +11,7 @@ import { AiFillGithub, AiFillGoogleCircle } from "react-icons/ai";
 const Auth = () => {
   const user = useContext(userContext);
 
-
+  console.log(user)
   return (
     <Container h="90vh" fontFamily={"poppins"} centerContent mt={8}>
 

@@ -6,9 +6,9 @@ const SocialIcons = () => {
   return (
     <Flex>
         
-    <IconButton  as={Link} href="https://github.com/sourabh32" aria-label="Facebook" icon={<FaGithub />} size="lg" variant="ghost" colorScheme="blue" />
-    <IconButton as={Link} href="https://www.instagram.com" aria-label="Twitter" icon={<FaInstagram />} size="lg" variant="ghost" colorScheme="blue" />
-    <IconButton as={Link} href="https://www.linkedin.com/in/sourabhbharadwaj" aria-label="Instagram" icon={<FaLinkedinIn />} size="lg" variant="ghost" colorScheme="pink" />
+    <IconButton target='_blank'  as={Link} href="https://github.com/sourabh32" aria-label="Facebook" icon={<FaGithub />} size="lg" variant="ghost" colorScheme="blue" />
+    <IconButton target='_blank' as={Link} href="https://www.instagram.com" aria-label="Twitter" icon={<FaInstagram />} size="lg" variant="ghost" colorScheme="blue" />
+    <IconButton target='_blank' as={Link} href="https://www.linkedin.com/in/sourabhbharadwaj" aria-label="Instagram" icon={<FaLinkedinIn />} size="lg" variant="ghost" colorScheme="pink" />
   </Flex>
   )
 }
