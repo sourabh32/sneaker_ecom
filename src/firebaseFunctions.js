@@ -40,7 +40,7 @@ export const signInWithGoogle = async () => {
   try {
     const user = await signInWithPopup(auth, provider);
     toast.success(`sucessfuly logged in`)
-    console.log(user.displayName);
+   
   } catch (error) {
     console.log(error);
   }
