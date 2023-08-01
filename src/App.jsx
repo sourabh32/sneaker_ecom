@@ -42,7 +42,7 @@ useEffect(()=>{
 
   return (
     <Router>
-      <Toaster />
+      <Toaster position="bottom" />
       <Header />
       <Suspense fallback={
         <Box w="100%" h="90vh">
