@@ -1,4 +1,4 @@
-import React,  from 'react'
+
 import StripeCheckout from 'react-stripe-checkout'
 import { clearCart } from '../../store/slices/cartSlice';
 import { useDispatch} from 'react-redux';
