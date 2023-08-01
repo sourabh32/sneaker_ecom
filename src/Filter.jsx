@@ -2,7 +2,8 @@ import React, {  useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { clear, filterByCategory, filterBySort } from "./store/slices/displaySlice";
 import { Button, HStack, Select } from "@chakra-ui/react";
-
+import {motion} from "framer-motion"
+const AnimatedHStack = motion(HStack);
 const Filter = () => {
   const [selectedSort, setSelectedSort] = useState("");
   const [selectedCategory,setSelectedCategory] = useState("")
@@ -39,7 +40,11 @@ const Filter = () => {
     dispatch(clear())
   }
   return (
-    <HStack  fontFamily={"poppins"}  mx="10%" flexWrap={"wrap"}>
+    <AnimatedHStack
+    overflow={"hidden"}
+    initial={{ x:-100,opacity: 0 }}
+    whileInView={{x:0 ,opacity: 1 }} transition={{delay:0.5}}  fontFamily={"poppins"}  mx="10%" flexWrap={"wrap"}>
+
       
       <Select fontWeight={"bold"} w="45%" variant={"filled"} value={selectedSort} onChange={handleSortChange}>
         <option value="">Sort By</option>
@@ -54,7 +59,7 @@ const Filter = () => {
         <option value="kids">Kids</option>
       </Select>
       <Button onClick={handleClear}>Clear Filters</Button>
-    </HStack>
+    </AnimatedHStack>
   );
 };
 

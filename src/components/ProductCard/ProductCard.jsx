@@ -5,12 +5,16 @@ import { useDispatch } from "react-redux";
 import { BiCartAdd } from "react-icons/bi";
 import LazyImage from "./LazyImage";
 import { toast } from "react-hot-toast";
-
+import {motion} from "framer-motion"
+const AnimatedBox = motion(Box);
 const ProductCard = ({ product }) => {
   const { brand, price, image } = product;
   const dispatch = useDispatch();
   return (
-    <Box
+    <AnimatedBox
+    initial={{ y:100,opacity: 0 }}
+    whileInView={{y:0 ,opacity: 1 }}
+    transition={{delay:0.5}}
       fontFamily={"poppins"}
       pos={"relative"}
       overflow="hidden"
@@ -33,7 +37,7 @@ const ProductCard = ({ product }) => {
             position: "absolute",
             right: "4%",
             top: "4%",
-            cursor: "pointer",
+            cursor: 'pointer',
            
           }}
           onClick={() => {dispatch(addItemToCart({ ...product }))
@@ -43,7 +47,7 @@ const ProductCard = ({ product }) => {
         />
        
       </Box>
-    </Box>
+    </AnimatedBox>
   );
 };
 

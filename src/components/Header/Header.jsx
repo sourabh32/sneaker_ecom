@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { BsHandbag } from "react-icons/bs";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { RxHamburgerMenu } from "react-icons/rx";
-
+import {motion} from "framer-motion"
+const AnimatedBox = motion(Box);
 import { Box, useDisclosure, HStack } from "@chakra-ui/react";
 import CartDrawer from "../Cart/CartDrawer";
 import MenuDrawer from "./MenuDrawer";
@@ -26,12 +27,15 @@ const Header = () => {
 
   return (
     <>
-      <Box  bg="rgba(0, 0, 0, 0)" 
+      <AnimatedBox  bg="rgba(0, 0, 0, 0)" 
+      overflow={"hidden"}
       color="gray.900"
       pos="sticky"
       top="0"
       left="0"
       width="100%"
+      initial={{ x:-100,opacity: 0 }}
+    whileInView={{x:0 ,opacity: 1 }}
   
       zIndex="1"  p={2}>
         <HStack justifyContent={"space-between"} alignItems="center">
@@ -58,7 +62,7 @@ const Header = () => {
           </Box>
           
         </HStack>
-      </Box>
+      </AnimatedBox>
       
       <CartDrawer isOpen={isOpenDrawer2} onClose={onCloseDrawer2} />
       <MenuDrawer isOpen={isOpenDrawer1} onClose={onCloseDrawer1} />

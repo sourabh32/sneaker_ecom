@@ -4,13 +4,15 @@ import { AiOutlinePlus, AiOutlineMinus, AiOutlineClose } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { addItemToCart, decreItemFromCart, removeItemFromCart } from "../../store/slices/cartSlice";
 import { toast } from "react-hot-toast";
-
+import {motion} from "framer-motion"
+const AnimatedFlex = motion(Flex);
 const CartProduct = ({ item }) => {
   const { image, brand, price, quantity,id,description } = item;
   const dispatch = useDispatch()
 
   return (
-    <Flex align="center" justify="space-between" p={2} borderBottom="1px solid #E2E8F0">
+    <AnimatedFlex initial={{ y:100,opacity: 0 }}
+    whileInView={{y:0 ,opacity: 1 }} align="center" justify="space-between" p={2} borderBottom="1px solid #E2E8F0">
       <Box display="flex" alignItems="center">
         <Image src={image} boxSize="80px" objectFit="cover" alt={brand} mr={4} />
         
@@ -55,7 +57,7 @@ const CartProduct = ({ item }) => {
           ml={2}
         />
       </Box>
-    </Flex>
+    </AnimatedFlex>
   );
 };
 
