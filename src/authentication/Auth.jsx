@@ -10,7 +10,7 @@ import { Container, Button, VStack, Text, Heading, Image, Box } from "@chakra-ui
 import { AiFillGithub, AiFillGoogleCircle } from "react-icons/ai";
 const Auth = () => {
   const user = useContext(userContext);
-  console.log(user);
+
 
   return (
     <Container h="90vh" fontFamily={"poppins"} centerContent mt={8}>
@@ -18,11 +18,11 @@ const Auth = () => {
       {
         user ? (
           <VStack spacing={4}>
-            {/* User profile information */}
+           
             <Image src={user.photoURL} alt="User Profile" boxSize="100px" rounded="full" />
             <Heading fontSize="lg">{user.displayName}</Heading>
             <Box>{user.email}</Box>
-            {/* Sign-out button */}
+           
             <Button onClick={() => logOut()} colorScheme="blue" size="sm" w="50%">
           Sign Out
         </Button>
@@ -62,17 +62,4 @@ const Auth = () => {
 
 export default Auth;
 
-// <div className="body">
-//   <div className="auth-container">
-//     <h2>Welcome!</h2>
 
-//     { user ? (<>
-//     <p>{user.email}</p>
-//     <img src={user.photoURL} style={{width:"20px",height:"20px"}}/>
-//      <button onClick={handleSignOut} className="auth-button signout">Sign Out</button></>):(<>
-//       <p>Please sign in to continue.</p>
-//      <button onClick={handleGoogle} className="auth-button google">Sign in with Google</button>
-//     <button onClick={handleGitHub} className="auth-button github">Sign in with GitHub</button></>)}
-
-//   </div>
-// </div>

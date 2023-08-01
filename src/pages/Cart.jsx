@@ -13,7 +13,7 @@ const CartPage = () => {
   };
 
   return (
-    <Box fontFamily="poppins" p={4}>
+    <Box fontFamily="poppins" minH="90vh" p={4}>
       
       {cartItems.map((item) => (
        <CartProduct key={item.id} item = {item} />
