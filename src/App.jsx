@@ -9,9 +9,8 @@ import Header from "./components/Header/Header";
 import Loader from "./components/Additionals/Loader";
 import { Box } from "@chakra-ui/react";
 import { Toaster } from "react-hot-toast";
-import ProductDetailsPage from "./pages/ProductDetails";
 
-
+const ProductDetailsPage = React.lazy(()=> import("./pages/ProductDetails"))
 const Home = React.lazy(() => import("./pages/Home"));
 const SneakerGallery = React.lazy(() => import("./components/Display/SneakerGallery"));
 const Men = React.lazy(() => import("./components/Display/Men"));

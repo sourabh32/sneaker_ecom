@@ -26,7 +26,7 @@ const ProductCard = ({ product }) => {
       <Link to={`/sneaker/${id}`}>
       <LazyImage src={image} alt="Product"  />
       </Link>
-      {/* <Image objectFit="cover" src={image} alt="Product" /> */}
+      
 
       <Box p={4}>
         <Text fontWeight="bold" fontSize="lg" mb={2}>
