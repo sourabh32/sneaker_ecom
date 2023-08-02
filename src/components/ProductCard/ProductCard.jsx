@@ -3,14 +3,17 @@ import { Box, Text } from "@chakra-ui/react";
 import { addItemToCart } from "../../store/slices/cartSlice";
 import { useDispatch } from "react-redux";
 import { BiCartAdd } from "react-icons/bi";
+import { Link } from "react-router-dom";
 import LazyImage from "./LazyImage";
 import { toast } from "react-hot-toast";
 import {motion} from "framer-motion"
+
 const AnimatedBox = motion(Box);
 const ProductCard = ({ product }) => {
-  const { brand, price, image } = product;
+  const { brand, price, image,id } = product;
   const dispatch = useDispatch();
   return (
+    
     <AnimatedBox
     initial={{ y:100,opacity: 0 }}
     whileInView={{y:0 ,opacity: 1 }}
@@ -20,7 +23,9 @@ const ProductCard = ({ product }) => {
       overflow="hidden"
       boxShadow="md"
     >
+      <Link to={`/sneaker/${id}`}>
       <LazyImage src={image} alt="Product"  />
+      </Link>
       {/* <Image objectFit="cover" src={image} alt="Product" /> */}
 
       <Box p={4}>
@@ -48,6 +53,7 @@ const ProductCard = ({ product }) => {
        
       </Box>
     </AnimatedBox>
+    
   );
 };
 

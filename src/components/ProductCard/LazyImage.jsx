@@ -17,13 +17,17 @@ const LazyImage = ({src,alt}) => {
           <Loader />
          </Box>
          }
+         <Box overflow={"hidden"}>
     <Image
       src={src}
       alt={alt}
   objectFit="cover"
   onLoad={handleImageLoad}
 loading='lazy'
+transition="transform 0.3s ease-out"
+_hover={{ transform: 'scale(1.3)' }} 
     />
+    </Box>
   </>
   )
 }
